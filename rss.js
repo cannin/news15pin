@@ -220,7 +220,7 @@ async function processTopics(topics) {
 
                 //if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
                 //    console.log("LOCALHOST");
-                    url = 'https://crossorigin.me/' + url; // http://cors-anywhere.herokuapp.com/
+                    url = 'https://cors-anywhere.herokuapp.com/' + url;
                 //}
                 
                 const feedData = await fetchAndParseRSS(url, topic.topic);
