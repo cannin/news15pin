@@ -199,32 +199,6 @@ function flattenTopics(data) {
     }, []); // Start with an empty array as the accumulator
 }
 
-// Function to iterate over all topics and fetch their respective RSS feeds
-//const url = 'https://justcors.com/tl_902bb5a/' + topic.item.xmlUrl; 
-// async function processTopics(topics) {
-//     const results = [];
-
-//     for (const topic of topics) {
-//         console.log("TOPIC: ", JSON.stringify(topic.item));
-
-//         if (topic.topic === 'Must Read') {
-//             continue; // Continue to next iteration in for
-//         }
-
-//         const url = 'http://cors-anywhere.herokuapp.com/' + topic.item.xmlUrl;
-//         const feedData = await fetchAndParseRSS(url);
-//         if (feedData) {
-//             results.push({
-//                 topic: topic.topic,
-//                 ...feedData
-//             });
-//         }
-//     }
-
-//     console.log(results);
-//     return results;
-// }
-
 async function processTopics(topics) {
     const results = [];
 
@@ -376,51 +350,3 @@ processTopics(subset).then(data => {
         contentContainer.appendChild(list);
     });
 });
-
-// Function to add a UL with items to the page
-// function addUnorderedList() {
-//     // Create the list element
-//     const ul = document.createElement('ul');
-
-//     // List items to add
-//     const items = ['Apple', 'Banana', 'Cherry'];
-
-//     // Loop through the items array
-//     items.forEach(item => {
-//         const li = document.createElement('li'); // Create a list item for each element
-//         li.textContent = item; // Set text content to the item value
-//         ul.appendChild(li); // Append the list item to the ul
-//     });
-
-//     // Find the container where the list will be placed
-//     const container = document.getElementById('rss');
-//     container.appendChild(ul); // Append the ul to the container
-// }
-
-// // Call the function to add the list to the page
-// addUnorderedList();
-
-
-// function sleep(ms) {
-//     return new Promise(resolve => setTimeout(resolve, ms));
-//   }
-  
-// async function demo() {
-//     console.log('2..');
-//     await sleep(3000);
-//     console.log('3...');
-// }
-
-// console.log('1.');
-// demo().then(() => {
-//     console.log('4....');
-// });
-
-// Example usage: Pass the RSS feed URL you want to pase
-//fetchAndParseRSS("https://rss.nytimes.com/services/xml/rss/nyt/Science.xml");
-//fetchAndParseRSS("https://justcors.com/tl_902bb5a/https://www.theonion.com/rss");
-//fetchAndParseRSS("https://httpbin.org/get");
-//    .then(response => console.log('RSS THEN: ', response.text()));
-
-// let x = await fetchAndParseRSS("https://rss.nytimes.com/services/xml/rss/nyt/Science.xml")
-// console.log('X: ', x.text());
