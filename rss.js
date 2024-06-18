@@ -334,28 +334,31 @@ processTopics(subset).then(data => {
 
     const contentContainer = document.getElementById('rss');
 
-    items.forEach(entry => {
-        // Create and add the header
-        const header = document.createElement('h4');
-        header.textContent = entry.title + ' (' + entry.topic + ')';
-        contentContainer.appendChild(header);
-
-        // Create and add the list
-        const list = document.createElement('ul');
-        entry.items.forEach(item => {
-            const listItem = document.createElement('li');
-            //const p = document.createElement('p');
-            const link = document.createElement('a');
-
-            //p.textContent = link + '<br/>' + truncateString(item.description, 90);
-
-            link.href = item.link;
-            link.target = '_blank'; 
-            link.textContent = item.title;
-
-            listItem.appendChild(link);
-            list.appendChild(listItem);
+    if(items.length === 0) {
+        const p = document.createElement('p');
+        p.textContent = 'No items found';
+        contentContainer.appendChild(p);
+    } else {
+        items.forEach(entry => {
+            // Create and add the header
+            const header = document.createElement('h4');
+            header.textContent = entry.title + ' (' + entry.topic + ')';
+            contentContainer.appendChild(header);
+    
+            // Create and add the list
+            const list = document.createElement('ul');
+            entry.items.forEach(item => {
+                const listItem = document.createElement('li');
+                const link = document.createElement('a');
+    
+                link.href = item.link;
+                link.target = '_blank'; 
+                link.textContent = item.title;
+    
+                listItem.appendChild(link);
+                list.appendChild(listItem);
+            });
+            contentContainer.appendChild(list);
         });
-        contentContainer.appendChild(list);
-    });
+    }
 });
