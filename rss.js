@@ -218,10 +218,10 @@ async function processTopics(topics) {
             for (const item of topic.items) {
                 let url = item.xmlUrl;
 
-                if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
-                    console.log("LOCALHOST");
-                    url = 'http://cors-anywhere.herokuapp.com/' + url;
-                }
+                //if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
+                //    console.log("LOCALHOST");
+                    url = 'https://crossorigin.me/' + url; // http://cors-anywhere.herokuapp.com/
+                //}
                 
                 const feedData = await fetchAndParseRSS(url, topic.topic);
                 if (feedData) {
