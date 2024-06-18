@@ -120,6 +120,9 @@ function truncateString(str, maxLength) {
 async function fetchAndParseRSS(url, topic) {
     const n = topicPriority[topic];
 
+    // Replace 'http' with 'https' in the URL
+    url = replaceWithHttps(url);
+
     try {
       // Fetch the RSS XML data
       //const response = await fetch(url, { mode: 'no-cors' }); // blocks output 
@@ -197,6 +200,12 @@ function flattenTopics(data) {
         // Concatenate the current items to the accumulator
         return acc.concat(current.items);
     }, []); // Start with an empty array as the accumulator
+}
+
+
+function replaceWithHttps(url) {
+    // Use replace() with a regular expression that targets 'http' at the start of the URL
+    return url.replace(/^http:\/\//, 'https://');
 }
 
 async function processTopics(topics) {
