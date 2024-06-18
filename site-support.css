@@ -1,0 +1,50 @@
+/* Site page support */
+.site-body {
+  max-width: 1024px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+.site-header {
+  margin-top: 40px;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.site-topnav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-footer {
+  padding-top: 0.5rem;
+}
+
+.site-break {
+  margin-top: 6rem;
+}
+
+.site-code {
+  display: block;
+  margin-top: 1em;
+  white-space: nowrap;
+}
+
+.form-example {
+  margin-bottom: 0.66em;
+}
+
+.misc-components {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+#fuel {
+  max-width: 600px;
+  min-width: 200px;
+}
+
+audio {
+  width: 100%;
+}
