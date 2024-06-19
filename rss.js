@@ -196,6 +196,7 @@ function parseRSS(xmlText, topic, n) {
 
         let date = '';
         let description = '';
+        let link = '';
 
         let match = null;
 
@@ -236,6 +237,15 @@ function parseRSS(xmlText, topic, n) {
             description = item.querySelector("content").textContent;
         }
 
+        // Parse link ----
+        link = item.querySelector("link");
+
+        if (link && link.hasAttribute('href')) {
+            link = link.getAttribute('href');
+        } else {
+            item.querySelector("link").textContent;
+        }
+
         title = truncateString(title, 90);
         title = title + ' (' + domain + ', ' + date + ')';
         description = truncateString(description, 90);
@@ -243,7 +253,7 @@ function parseRSS(xmlText, topic, n) {
         result.items.push({
             title: title,
             description: description,
-            link: item.querySelector("link").textContent,
+            link: link,
             pubDate: date
         });
     }
