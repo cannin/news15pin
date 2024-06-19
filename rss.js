@@ -101,7 +101,7 @@ async function fetchAndParseRSS(url, topic) {
     console.log('RSS URL: ', url);
 
     try {
-      await new Promise(resolve => setTimeout(resolve, 100));
+      await new Promise(resolve => setTimeout(resolve, 5));
 
       // Fetch the RSS XML data
       const response = await fetch(url);
