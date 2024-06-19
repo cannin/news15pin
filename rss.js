@@ -395,8 +395,8 @@ const topicPriority = {
     "politics": 2,
     "science": 2,
     "science.bioinformatics": 2,
-    "tech.sec": 2,
-    "etc.sec": 1,
+    "tech.2": 2,
+    "etc.2": 1,
     "science.research": 1
 };
 
