@@ -32,7 +32,7 @@ function parseOPML(xmlString, ignoreTopics, ignoreTitles) {
         items.forEach(item => {
             const itemTitle = item.getAttribute("title");
             console.log('CUR ITEM TITLE: ', itemTitle);
-    
+
 
             if(ignoreTitles.includes(itemTitle)) {
                 console.log('IGNORE ITEM: ', itemTitle);
@@ -133,19 +133,19 @@ async function fetchAndParseRSS(url, topic) {
       console.log('RSS XML DOWNLOAD DONE: ', xmlText);
 
       if(xmlText === 'Internal Server Error') {
-        return null; 
+        return null;
       }
 
       const result = await parseRSS(xmlText, topic, n);
       console.log('RSS PARSE DONE: ', result);
 
       // BAD ATTEMPTS ----
-      //const r1 = await fetch(url) 
+      //const r1 = await fetch(url)
       //  .then(r1 => console.log("X1: ", r1.text())); NOPE
       //const response = await fetch(url);
       //const xmlText = await response.text();
       //const result = await parseRSS(xmlText);
-      
+
       return result;
     } catch (error) {
       console.error("Failed to fetch or parse RSS: URL: ", url, "ERROR: ", error);
@@ -159,26 +159,30 @@ function parseRSS(xmlText, topic, n) {
     const xmlDoc = parser.parseFromString(xmlText, "application/xml");
     console.log('RSS PARSE DONE');
 
-    // Extract and process the channel information and items
-    let channel = xmlDoc.querySelector("channel");
-    console.log('RSS CHANNEL EXTRACTION DONE');
+    let channel = '';
+    let channel_title = null;
+    let items = null;
 
-    let channel_title = null; 
-    let items = null; 
-
-    if (channel === null) {
-        channel = xmlDoc.querySelector("title");
-        channel_title = channel.textContent;
-        console.log('RSS TITLE EXTRACTION DONE: NO CHANNEL');
-
-        items = channel.querySelectorAll("entry");
-        console.log('RSS ITEM EXTRACTION DONE: NO CHANNEL');
-    } else {
+    // Parse channel title and items ----
+    if (xmlDoc.querySelector("channel") !== null) {
+        channel = xmlDoc.querySelector("channel");
+        
         channel_title = channel.querySelector("title").textContent;
         console.log('RSS TITLE EXTRACTION DONE: CHANNEL');
         items = channel.querySelectorAll("item");
         console.log('RSS ITEM EXTRACTION DONE: CHANNEL');
     }
+
+    if (xmlDoc.querySelector("feed") !== null) {
+        channel = xmlDoc.querySelector("feed"); 
+
+        channel_title = xmlDoc.querySelector("title").textContent;
+        console.log('RSS TITLE EXTRACTION DONE: NO CHANNEL');
+
+        items = channel.querySelectorAll("entry");
+        console.log('RSS ITEM EXTRACTION DONE: NO CHANNEL');
+    }
+    console.log('RSS CHANNEL EXTRACTION DONE');
 
     console.log('CHANNEL TITLE: ', channel_title);
 
@@ -214,21 +218,21 @@ function parseRSS(xmlText, topic, n) {
                 match = date.match(date_regex_2);
                 date = match[1].trim();
             }
-        } 
-        
+        }
+
         if (item.querySelector("published") !== null) {
             date = item.querySelector('published').textContent;
-                
+
             // Regular expression to extract the month and day
             match = date.match(date_regex_2);
             date = match[1].trim();
         }
 
         // Parse description ----
-        if(item.querySelector("description") !== null) {  
+        if(item.querySelector("description") !== null) {
             description = item.querySelector("description").textContent;
-        } 
-        
+        }
+
         if (item.querySelector("summary") !== null) {
             description = item.querySelector("summary").textContent;;
         }
@@ -261,7 +265,7 @@ function parseRSS(xmlText, topic, n) {
     return result;
 }
 
-// Undo nested topics 
+// Undo nested topics
 function flattenTopics(data) {
     // Use the reduce function to accumulate all items into a single array
     return data.reduce((acc, current) => {
@@ -355,7 +359,7 @@ const ignoreTopics = [
 ];
 
 const ignoreTitles = [
-    'Harvard University Gazette', 
+    'Harvard University Gazette',
     'Altmetric Ranked Biomedical Research Articles',
     'Everything',
     'Wooster Collective',
@@ -412,17 +416,17 @@ processTopics(subset).then(data => {
             const header = document.createElement('h4');
             header.textContent = entry.title + ' (' + entry.topic + ')';
             contentContainer.appendChild(header);
-    
+
             // Create and add the list
             const list = document.createElement('ul');
             entry.items.forEach(item => {
                 const listItem = document.createElement('li');
                 const link = document.createElement('a');
-    
+
                 link.href = item.link;
-                link.target = '_blank'; 
+                link.target = '_blank';
                 link.textContent = item.title;
-    
+
                 listItem.appendChild(link);
                 list.appendChild(listItem);
             });
