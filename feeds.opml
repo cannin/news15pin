@@ -105,7 +105,6 @@
             <outline type="rss" text="Altmetric Ranked Biomedical Research Articles" title="Altmetric Ranked Biomedical Research Articles" xmlUrl="https://altrss.lunean.com/rss2.xml" htmlUrl="http://lunean.com"/>
         </outline>
         <outline text="news" title="news">
-            <outline type="rss" text="Wikipedia: Portal: Current events" title="Wikipedia: Portal: Current events" xmlUrl="https://www.to-rss.xyz/wikipedia/current_events/" htmlUrl="https://en.wikipedia.org/wiki/Portal:Current_events"/>
             <outline type="rss" text="freshnews.org - most clicked links" title="freshnews.org - most clicked links" xmlUrl="http://feeds.feedburner.com/FreshnewsMostClicked" htmlUrl="https://www.freshnews.org"/>
             <outline type="rss" text="BBC News Top Stories" title="BBC News Top Stories" xmlUrl="https://rsshub.app/bbc/" htmlUrl="https://www.bbc.co.uk/news"/>
             <outline type="rss" text="CNN.com - RSS Channel" title="CNN.com - RSS Channel" xmlUrl="http://rss.cnn.com/rss/cnn_latest.rss" htmlUrl="http://www.cnn.com"/>
