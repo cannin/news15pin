@@ -350,7 +350,7 @@ function main() {
             } else {
                 items.forEach(entry => {
                     // Create and add the header
-                    const header = document.createElement('h4');
+                    const header = document.createElement('h1');
                     header.textContent = entry.title + ' (' + entry.topic + ')';
                     contentContainer.appendChild(header);
     

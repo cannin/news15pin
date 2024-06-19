@@ -85,30 +85,29 @@ footer {
 header {
 }
 
+/* From https://stackoverflow.com/questions/2325850/h1-h6-font-sizes-in-html */
 h1 {
-  font-size: 2.5rem;
-}
-
-h2 {
   font-size: 2rem;
 }
 
+h2 {
+  font-size: 1.74rem;
+}
+
 h3 {
-  font-size: 1.75rem;
+  font-size: 1.52rem;
 }
 
 h4 {
-  font-size: 1.5rem;
+  font-size: 1.32rem;
 }
 
 h5 {
-  font-size: 1.25rem;
-  font-weight: normal;
+  font-size: 1.15rem;
 }
 
 h6 {
   font-size: 1rem;
-  font-weight: normal;
 }
 
 h1,
@@ -125,6 +124,8 @@ h1,
 h2,
 h3,
 h4,
+h5,
+h6,
 b,
 strong,
 th {
@@ -205,12 +206,17 @@ p {
 /* Inline text elements */
 a {
   color: var(--links);
+  text-decoration: none;
 }
 
 a:active,
 a:hover,
 a:focus {
-  text-decoration: none;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: #aaaaaa;
 }
 
 mark,

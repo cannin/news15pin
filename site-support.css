@@ -5,16 +5,16 @@
   padding: 0 20px;
 }
 
-.site-header {
-  margin-top: 40px;
-  font-weight: 700;
-  font-size: 1rem;
-}
-
 .site-topnav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.site-header {
+  margin-top: 40px;
+  font-weight: 700;
+  font-size: 1rem;
 }
 
 .site-footer {
@@ -31,18 +31,9 @@
   white-space: nowrap;
 }
 
-.form-example {
-  margin-bottom: 0.66em;
-}
-
 .misc-components {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
-
-#fuel {
-  max-width: 600px;
-  min-width: 200px;
 }
 
 audio {
