@@ -56,9 +56,9 @@
             <outline type="rss" text="Laughing Squid" title="Laughing Squid" xmlUrl="http://feeds.laughingsquid.com/laughingsquid" htmlUrl="https://laughingsquid.com/"/>
         </outline>
         <outline text="science.research" title="science.research">
-            <outline type="rss" text="cancer" title="cancer" xmlUrl="https://pubmed.ncbi.nlm.nih.gov/rss/search/1DK1DQN9MQ-Pev7BMg_oHVDbd2-9L5OcRMCry78just1cFgEbl/?limit=15&amp;utm_campaign=pubmed-2&amp;fc=20240619090532" htmlUrl="https://pubmed.ncbi.nlm.nih.gov/rss-feed/?feed_id=1DK1DQN9MQ-Pev7BMg_oHVDbd2-9L5OcRMCry78just1cFgEbl&amp;utm_campaign=pubmed-2&amp;fc=20240619090532&amp;utm_content=1DK1DQN9MQ-Pev7BMg_oHVDbd2-9L5OcRMCry78just1cFgEbl&amp;utm_medium=rss&amp;utm_source=Feedly&amp;v=2.18.0.post9+e462414&amp;ff=20240619090614"/>
-            <outline type="rss" text="adrenocortical carcinoma" title="adrenocortical carcinoma" xmlUrl="https://pubmed.ncbi.nlm.nih.gov/rss/search/1854v2hhZntVmgF1BMsyZT9Nqtl-ergz8vRJKeqiOF0fNW-waK/?limit=15&amp;utm_campaign=pubmed-2&amp;fc=20240619090705" htmlUrl="https://pubmed.ncbi.nlm.nih.gov/rss-feed/?feed_id=1854v2hhZntVmgF1BMsyZT9Nqtl-ergz8vRJKeqiOF0fNW-waK&amp;utm_source=Feedly&amp;v=2.18.0.post9+e462414&amp;utm_medium=rss&amp;ff=20240619090720&amp;utm_campaign=pubmed-2&amp;fc=20240619090705&amp;utm_content=1854v2hhZntVmgF1BMsyZT9Nqtl-ergz8vRJKeqiOF0fNW-waK"/>
-            <outline type="rss" text="graph neural network" title="graph neural network" xmlUrl="https://pubmed.ncbi.nlm.nih.gov/rss/search/12kswG5SFWVAwed2naKIc0T4JiPBzr47ZAJmK4Fq7s6tpci9Qk/?limit=15&amp;utm_campaign=pubmed-2&amp;fc=20240619090739" htmlUrl="https://pubmed.ncbi.nlm.nih.gov/rss-feed/?feed_id=12kswG5SFWVAwed2naKIc0T4JiPBzr47ZAJmK4Fq7s6tpci9Qk&amp;ff=20240619090746&amp;v=2.18.0.post9+e462414&amp;utm_source=Feedly&amp;utm_content=12kswG5SFWVAwed2naKIc0T4JiPBzr47ZAJmK4Fq7s6tpci9Qk&amp;utm_medium=rss&amp;utm_campaign=pubmed-2&amp;fc=20240619090739"/>
+            <outline type="rss" text="cancer" title="cancer" xmlUrl="https://pubmed.ncbi.nlm.nih.gov/rss/search/1DK1DQN9MQ-Pev7BMg_oHVDbd2-9L5OcRMCry78just1cFgEbl/?limit=15&amp;utm_campaign=pubmed-2&amp;fc=20240619090532" htmlUrl="https://pubmed.ncbi.nlm.nih.gov/rss-feed/?feed_id=1DK1DQN9MQ-Pev7BMg_oHVDbd2-9L5OcRMCry78just1cFgEbl&amp;fc=20240619090532&amp;v=2.18.0.post9+e462414&amp;utm_source=Feedly&amp;ff=20240619154407&amp;utm_medium=rss&amp;utm_campaign=pubmed-2&amp;utm_content=1DK1DQN9MQ-Pev7BMg_oHVDbd2-9L5OcRMCry78just1cFgEbl"/>
+            <outline type="rss" text="adrenocortical carcinoma" title="adrenocortical carcinoma" xmlUrl="https://pubmed.ncbi.nlm.nih.gov/rss/search/1854v2hhZntVmgF1BMsyZT9Nqtl-ergz8vRJKeqiOF0fNW-waK/?limit=15&amp;utm_campaign=pubmed-2&amp;fc=20240619090705" htmlUrl="https://pubmed.ncbi.nlm.nih.gov/rss-feed/?feed_id=1854v2hhZntVmgF1BMsyZT9Nqtl-ergz8vRJKeqiOF0fNW-waK&amp;v=2.18.0.post9+e462414&amp;ff=20240619154951&amp;utm_content=1854v2hhZntVmgF1BMsyZT9Nqtl-ergz8vRJKeqiOF0fNW-waK&amp;utm_medium=rss&amp;fc=20240619090705&amp;utm_source=Feedly&amp;utm_campaign=pubmed-2"/>
+            <outline type="rss" text="graph neural network" title="graph neural network" xmlUrl="https://pubmed.ncbi.nlm.nih.gov/rss/search/12kswG5SFWVAwed2naKIc0T4JiPBzr47ZAJmK4Fq7s6tpci9Qk/?limit=15&amp;utm_campaign=pubmed-2&amp;fc=20240619090739" htmlUrl="https://pubmed.ncbi.nlm.nih.gov/rss-feed/?feed_id=12kswG5SFWVAwed2naKIc0T4JiPBzr47ZAJmK4Fq7s6tpci9Qk&amp;utm_campaign=pubmed-2&amp;fc=20240619090739&amp;utm_medium=rss&amp;utm_source=Feedly&amp;utm_content=12kswG5SFWVAwed2naKIc0T4JiPBzr47ZAJmK4Fq7s6tpci9Qk&amp;v=2.18.0.post9+e462414&amp;ff=20240619091113"/>
         </outline>
         <outline text="music" title="music">
             <outline type="rss" text="The Allmusic Blog" title="The Allmusic Blog" xmlUrl="http://blog.allmusic.com/feed/" htmlUrl="https://www.allmusic.com/blog/"/>
@@ -75,6 +75,7 @@
             <outline type="rss" text="Livescience.com" title="Livescience.com" xmlUrl="http://feeds.feedburner.com/Livesciencecom" htmlUrl="https://www.livescience.com"/>
             <outline type="rss" text="KDNuggets" title="KDNuggets" xmlUrl="http://feeds.feedburner.com/kdnuggets-data-mining-analytics" htmlUrl="https://www.kdnuggets.com"/>
             <outline type="rss" text="Scientific Blogging: Michael Shermer Scientific Blogging article" title="Scientific Blogging: Michael Shermer Scientific Blogging article" xmlUrl="http://www.scientificblogging.com/rss.xml" htmlUrl="https://www.science20.com"/>
+            <outline type="rss" text="Science Latest" title="Science Latest" xmlUrl="https://www.wired.com/feed/category/science/latest/rss" htmlUrl="https://www.wired.com"/>
             <outline type="rss" text="National Institutes of Health (NIH) News Releases" title="National Institutes of Health (NIH) News Releases" xmlUrl="http://www.nih.gov/news/feed.xml" htmlUrl="https://www.nih.gov/"/>
             <outline type="rss" text="Machine Learning Mastery" title="Machine Learning Mastery" xmlUrl="http://machinelearningmastery.com/feed/" htmlUrl="https://machinelearningmastery.com/"/>
         </outline>
@@ -104,6 +105,7 @@
             <outline type="rss" text="Altmetric Ranked Biomedical Research Articles" title="Altmetric Ranked Biomedical Research Articles" xmlUrl="https://altrss.lunean.com/rss2.xml" htmlUrl="http://lunean.com"/>
         </outline>
         <outline text="news" title="news">
+            <outline type="rss" text="Wikipedia: Portal: Current events" title="Wikipedia: Portal: Current events" xmlUrl="https://www.to-rss.xyz/wikipedia/current_events/" htmlUrl="https://en.wikipedia.org/wiki/Portal:Current_events"/>
             <outline type="rss" text="BBC News Top Stories" title="BBC News Top Stories" xmlUrl="https://rsshub.app/bbc/" htmlUrl="https://www.bbc.co.uk/news"/>
             <outline type="rss" text="CNN.com - RSS Channel" title="CNN.com - RSS Channel" xmlUrl="http://rss.cnn.com/rss/cnn_latest.rss" htmlUrl="http://www.cnn.com"/>
             <outline type="rss" text="NYT &gt; Top Stories" title="NYT &gt; Top Stories" xmlUrl="https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml" htmlUrl="https://www.nytimes.com"/>
@@ -117,9 +119,12 @@
         </outline>
         <outline text="tech.sec" title="tech.sec">
             <outline type="rss" text="VentureBeat" title="VentureBeat" xmlUrl="http://venturebeat.com/feed/" htmlUrl="https://venturebeat.com/"/>
+            <outline type="rss" text="freshnews.org - most clicked links" title="freshnews.org - most clicked links" xmlUrl="http://feeds.feedburner.com/FreshnewsMostClicked" htmlUrl="https://www.freshnews.org"/>
+            <outline type="rss" text="Ideas Latest" title="Ideas Latest" xmlUrl="https://www.wired.com/feed/category/ideas/latest/rss" htmlUrl="https://www.wired.com"/>
             <outline type="rss" text="The Verge - All Posts" title="The Verge - All Posts" xmlUrl="https://www.theverge.com/rss/index.xml" htmlUrl="https://www.theverge.com/"/>
             <outline type="rss" text="TechCrunch" title="TechCrunch" xmlUrl="https://techcrunch.com/feed/" htmlUrl="https://techcrunch.com/"/>
             <outline type="rss" text="newest submissions : NintendoSwitch" title="newest submissions : NintendoSwitch" xmlUrl="https://www.reddit.com/r/nintendoswitch/new/.rss" htmlUrl="https://www.reddit.com/r/nintendoswitch/new/"/>
+            <outline type="rss" text="Quartz" title="Quartz" xmlUrl="https://cms.qz.com/feed" htmlUrl="https://qz.com"/>
         </outline>
     </body>
 </opml>
