@@ -203,9 +203,9 @@ function parseRSS(xmlText, topic, n) {
         date_regex_1 = /(\d{1,2} \w+) \d{4}/;
         date_regex_2 = /\d{4}-(\d{2}-\d{2})/;
 
+        // Parse date
         if(date !== null) {
             date = date.textContent;
-            description = description.textContent;
 
             match = date.match(date_regex_1);
             if(match) {
@@ -215,12 +215,26 @@ function parseRSS(xmlText, topic, n) {
                 date = match[1].trim();
             }
         } else {
-            date = item.querySelector('published').textContent;
-            description = item.querySelector("summary").textContent;
+            date = item.querySelector('published');
 
-            // Regular expression to extract the month and day
-            match = date.match(date_regex_2);
-            date = match[1].trim();
+            if(date !== null) {
+                date = date.textContent;
+                
+                // Regular expression to extract the month and day
+                match = date.match(date_regex_2);
+                date = match[1].trim();
+            }
+        }
+
+        // Parse description
+        if(description !== null) {  
+            description = description.textContent;
+        } else {
+            description = item.querySelector("summary");
+
+            if(description !== null) {
+                description = description.textContent;
+            }
         }
 
         title = truncateString(title, 90);
