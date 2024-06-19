@@ -194,18 +194,17 @@ function parseRSS(xmlText, topic, n) {
         let title = item.querySelector("title").textContent;
         const domain = getDomainFromUrl(item.querySelector("link").textContent);
 
-        let date = item.querySelector("pubDate");
-        let description = item.querySelector("description");
+        let date = '';
+        let description = '';
 
-        let regex = null;
         let match = null;
 
         date_regex_1 = /(\d{1,2} \w+) \d{4}/;
         date_regex_2 = /\d{4}-(\d{2}-\d{2})/;
 
-        // Parse date
-        if(date !== null) {
-            date = date.textContent;
+        // Parse date ----
+        if(item.querySelector("pubDate") !== null) {
+            date = item.querySelector("pubDate").textContent;
 
             match = date.match(date_regex_1);
             if(match) {
@@ -214,27 +213,27 @@ function parseRSS(xmlText, topic, n) {
                 match = date.match(date_regex_2);
                 date = match[1].trim();
             }
-        } else {
-            date = item.querySelector('published');
-
-            if(date !== null) {
-                date = date.textContent;
+        } 
+        
+        if (item.querySelector("published") !== null) {
+            date = item.querySelector('published').textContent;
                 
-                // Regular expression to extract the month and day
-                match = date.match(date_regex_2);
-                date = match[1].trim();
-            }
+            // Regular expression to extract the month and day
+            match = date.match(date_regex_2);
+            date = match[1].trim();
         }
 
-        // Parse description
-        if(description !== null) {  
-            description = description.textContent;
-        } else {
-            description = item.querySelector("summary");
+        // Parse description ----
+        if(item.querySelector("description") !== null) {  
+            description = item.querySelector("description").textContent;
+        } 
+        
+        if (item.querySelector("description") !== null) {
+            description = item.querySelector("summary").textContent;;
+        }
 
-            if(description !== null) {
-                description = description.textContent;
-            }
+        if(item.querySelector("content") !== null) {
+            description = item.querySelector("content").textContent;
         }
 
         title = truncateString(title, 90);
