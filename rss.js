@@ -409,10 +409,19 @@ const ignoreTitles = [
 // Number of sources to select from each topic
 let n_sources = 2;
 
-// Get the value of 'sources' if specified in the URL
+// Get the value of 'sources' or 's' if specified in the URL
 const params = new URL(window.location.href).searchParams;
 if (params.get('sources') !== null && params.get('sources') !== '') {
     let value = params.get('sources');
+    value = parseInt(value);
+
+    if (!isNaN(value) && value > 0) {
+        n_sources = value;
+    }
+}
+
+if (params.get('s') !== null && params.get('s') !== '') {
+    let value = params.get('s');
     value = parseInt(value);
 
     if (!isNaN(value) && value > 0) {
