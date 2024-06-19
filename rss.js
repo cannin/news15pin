@@ -385,9 +385,9 @@ const topicPriority = {
     "politics": 2,
     "science": 2,
     "science.bioinformatics": 2,
-    "science.research": 2,
     "tech.sec": 2,
-    "etc.sec": 1
+    "etc.sec": 1,
+    "science.research": 1
 };
 
 // List of RSS topics to ignore
