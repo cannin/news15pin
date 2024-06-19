@@ -10,8 +10,8 @@
             <outline type="rss" text="Featured Projects" title="Featured Projects" xmlUrl="http://feeds.feedburner.com/behance/vorr" htmlUrl="http://www.behance.net"/>
             <outline type="rss" text="NOTCOT.ORG" title="NOTCOT.ORG" xmlUrl="http://www.notcot.org/atom.php" htmlUrl="http://www.notcot.org/"/>
             <outline type="rss" text="Colossal" title="Colossal" xmlUrl="https://www.thisiscolossal.com/feed/" htmlUrl="https://www.thisiscolossal.com/"/>
-            <outline type="rss" text="Massachusetts Cultural Council" title="Massachusetts Cultural Council" xmlUrl="http://feeds.feedburner.com/Artsake" htmlUrl="https://artsake.massculturalcouncil.org/"/>
             <outline type="rss" text="Explore Flickr" title="Explore Flickr" xmlUrl="http://feeds.feedburner.com/explore_flickr_rss" htmlUrl="http://lunean.com/explore_flickr_rss/rss_tmp.xml"/>
+            <outline type="rss" text="Massachusetts Cultural Council" title="Massachusetts Cultural Council" xmlUrl="http://feeds.feedburner.com/Artsake" htmlUrl="https://artsake.massculturalcouncil.org/"/>
             <outline type="rss" text="Yanko Design" title="Yanko Design" xmlUrl="http://www.yankodesign.com/feed/" htmlUrl="https://www.yankodesign.com"/>
             <outline type="rss" text="COOL HUNTING®" title="COOL HUNTING®" xmlUrl="http://www.coolhunting.com/atom.xml" htmlUrl="https://coolhunting.com"/>
             <outline type="rss" text="Design You Trust" title="Design You Trust" xmlUrl="http://designyoutrust.com/feed/" htmlUrl="https://designyoutrust.com"/>
@@ -29,7 +29,7 @@
             <outline type="rss" text="Archinect.com Feed" title="Archinect.com Feed" xmlUrl="http://feeds2.feedburner.com/archinect" htmlUrl="https://archinect.com/"/>
             <outline type="rss" text="Wooster Collective" title="Wooster Collective" xmlUrl="http://woostercollective.com/rss/index.xml" htmlUrl="http://www.woostercollective.com/"/>
         </outline>
-        <outline text="etc.sec" title="etc.sec">
+        <outline text="etc.2" title="etc.2">
             <outline type="rss" text="Boing Boing" title="Boing Boing" xmlUrl="http://boingboing.net/index.rdf" htmlUrl="https://boingboing.net/"/>
             <outline type="rss" text="The New Yorker" title="The New Yorker" xmlUrl="http://www.newyorker.com/services/rss/feeds/everything.xml" htmlUrl="https://www.newyorker.com/culture"/>
             <outline type="rss" text="Slate - Culture" title="Slate - Culture" xmlUrl="http://www.slate.com/rss" htmlUrl="https://slate.com/culture"/>
@@ -106,6 +106,7 @@
         </outline>
         <outline text="news" title="news">
             <outline type="rss" text="Wikipedia: Portal: Current events" title="Wikipedia: Portal: Current events" xmlUrl="https://www.to-rss.xyz/wikipedia/current_events/" htmlUrl="https://en.wikipedia.org/wiki/Portal:Current_events"/>
+            <outline type="rss" text="freshnews.org - most clicked links" title="freshnews.org - most clicked links" xmlUrl="http://feeds.feedburner.com/FreshnewsMostClicked" htmlUrl="https://www.freshnews.org"/>
             <outline type="rss" text="BBC News Top Stories" title="BBC News Top Stories" xmlUrl="https://rsshub.app/bbc/" htmlUrl="https://www.bbc.co.uk/news"/>
             <outline type="rss" text="CNN.com - RSS Channel" title="CNN.com - RSS Channel" xmlUrl="http://rss.cnn.com/rss/cnn_latest.rss" htmlUrl="http://www.cnn.com"/>
             <outline type="rss" text="NYT &gt; Top Stories" title="NYT &gt; Top Stories" xmlUrl="https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml" htmlUrl="https://www.nytimes.com"/>
@@ -117,9 +118,8 @@
             <outline type="rss" text="Home - CBSNews.com" title="Home - CBSNews.com" xmlUrl="https://www.cbsnews.com/latest/rss/main" htmlUrl="https://www.cbsnews.com/"/>
             <outline type="rss" text="ABC News: Top Stories" title="ABC News: Top Stories" xmlUrl="http://feeds.abcnews.com/abcnews/topstories" htmlUrl="http://abcnews.go.com/"/>
         </outline>
-        <outline text="tech.sec" title="tech.sec">
+        <outline text="tech.2" title="tech.2">
             <outline type="rss" text="VentureBeat" title="VentureBeat" xmlUrl="http://venturebeat.com/feed/" htmlUrl="https://venturebeat.com/"/>
-            <outline type="rss" text="freshnews.org - most clicked links" title="freshnews.org - most clicked links" xmlUrl="http://feeds.feedburner.com/FreshnewsMostClicked" htmlUrl="https://www.freshnews.org"/>
             <outline type="rss" text="Ideas Latest" title="Ideas Latest" xmlUrl="https://www.wired.com/feed/category/ideas/latest/rss" htmlUrl="https://www.wired.com"/>
             <outline type="rss" text="The Verge - All Posts" title="The Verge - All Posts" xmlUrl="https://www.theverge.com/rss/index.xml" htmlUrl="https://www.theverge.com/"/>
             <outline type="rss" text="TechCrunch" title="TechCrunch" xmlUrl="https://techcrunch.com/feed/" htmlUrl="https://techcrunch.com/"/>

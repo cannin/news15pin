@@ -416,7 +416,8 @@ const ignoreTitles = [
     'FECAL FACE DOT COM',
     'Fstoppers',
     'Spin Magazine Online -',
-    'The Allmusic Blog'
+    'The Allmusic Blog',
+    'Massachusetts Cultural Council'
 ];
 
 // Number of sources to select from each topic
