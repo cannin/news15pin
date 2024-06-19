@@ -252,7 +252,10 @@ function flattenTopics(data) {
 async function processTopics(topics) {
     const results = [];
 
-    for (const topic of topics) {
+    for (let i = 0; i < topics.length; i++) {
+        const topic = topics[i];
+        document.querySelector('progress').setAttribute('value', (i / topics.length) * 100);
+
         // Check if the topic has multiple items and handle them
         if (topic.items && topic.items.length) {
             const feedDataArray = [];
@@ -375,6 +378,9 @@ function main() {
                     contentContainer.appendChild(list);
                 });
             }
+
+            // Remove progress bar and add the results
+            document.querySelector('progress').remove();
         });
 }
 

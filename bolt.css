@@ -15,7 +15,7 @@
  */
 
 :root {
-  --highlight-border-radius: 7px;
+  --highlight-border-radius: 0px;
   --border-radius: 11px;
   --yellow-highlight: #fffab7;
 
@@ -517,7 +517,7 @@ progress {
 
 progress::-webkit-progress-bar {
   background: var(--background-main);
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2) inset;
+  /* box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2) inset; */
   border-radius: var(--highlight-border-radius);
 }
 
