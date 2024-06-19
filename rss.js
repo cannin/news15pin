@@ -362,7 +362,7 @@ function main() {
                         let itemLink = item.link;
     
                         // Remove URL parameters on links 
-                        if (urlString.includes('nih.gov')) {
+                        if (itemLink.includes('nih.gov')) {
                             itemLink = itemLink.split('?')[0] 
                         }
 
