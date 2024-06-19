@@ -200,20 +200,26 @@ function parseRSS(xmlText, topic, n) {
         let regex = null;
         let match = null;
 
+        date_regex_1 = /(\d{1,2} \w+) \d{4}/;
+        date_regex_2 = /\d{4}-(\d{2}-\d{2})/;
+
         if(date !== null) {
             date = date.textContent;
             description = description.textContent;
 
-            regex = /(\d{1,2} \w+) \d{4}/;
-            match = date.match(regex);
-            date = match[1].trim();
+            match = date.match(date_regex_1);
+            if(match) {
+                date = match[1].trim();
+            } else {
+                match = date.match(date_regex_2);
+                date = match[1].trim();
+            }
         } else {
             date = item.querySelector('published').textContent;
             description = item.querySelector("summary").textContent;
 
             // Regular expression to extract the month and day
-            regex = /-(\d{2}-\d{2})T/;
-            match = date.match(regex);
+            match = date.match(date_regex_2);
             date = match[1].trim();
         }
 
