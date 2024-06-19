@@ -228,7 +228,7 @@ function parseRSS(xmlText, topic, n) {
             description = item.querySelector("description").textContent;
         } 
         
-        if (item.querySelector("description") !== null) {
+        if (item.querySelector("summary") !== null) {
             description = item.querySelector("summary").textContent;;
         }
 
