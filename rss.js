@@ -409,12 +409,11 @@ processTopics(subset).then(data => {
 
     console.log('SORTED TOPICS: ', items);
 
-    const contentContainer = document.getElementById('rss');
+    let contentContainer = document.getElementById('rss');
+    contentContainer.textContent = '';
 
     if(items.length === 0) {
-        const p = document.createElement('p');
-        p.textContent = 'No items found';
-        contentContainer.appendChild(p);
+        contentContainer.textContent = 'No items found';
     } else {
         items.forEach(entry => {
             // Create and add the header
@@ -435,6 +434,7 @@ processTopics(subset).then(data => {
                 listItem.appendChild(link);
                 list.appendChild(listItem);
             });
+
             contentContainer.appendChild(list);
         });
     }
