@@ -1,1 +1,3 @@
-# news_15pin
+# OPML News
+
+Client-side auto-generated news site from OPML & RSS
