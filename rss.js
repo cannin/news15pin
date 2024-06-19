@@ -381,25 +381,31 @@ const ignoreTitles = [
 ];
 
 // Number of sources to select from each topic
-const n_sources = 2;
+let n_sources = 2;
+
+// Get the value of 'sources' if used
+const params = new URL(window.location.href).searchParams;
+if (params.get('sources') !== null && params.get('sources') !== '') {
+    let value = params.get('sources');
+    value = parseInt(value);
+
+    if (!isNaN(value) && value > 0) {
+        n_sources = value;
+    }
+}
 
 // Proxy URL
 const proxyUrl = 'https://w3kjl7phz5lslxrhzapi7wasx40msjqd.lambda-url.us-east-1.on.aws/?url=';
 
 let contentContainer = document.getElementById('rss');
-contentContainer.textContent = 'Loading ...';
+contentContainer.textContent = 'Parsing OPML ...';
 
 const data = parseOPML(opmlData, ignoreTopics, ignoreTitles);
 console.log('DATA: ', data);
 
-contentContainer.textContent = 'Parsing OPML ...';
-
 // Using the function and logging the result
-//const subset = getRandomItemFromEachTopic(data);
 const subset = getRandomItemsFromEachTopic(data, n_sources);
 console.log('SUBSET: ', subset);
-
-contentContainer.textContent = 'Retrieving Topics ...';
 
 // Run the function to process all topics and log the output
 processTopics(subset).then(data => {
