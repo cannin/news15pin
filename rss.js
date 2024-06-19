@@ -116,13 +116,6 @@ async function fetchAndParseRSS(url, topic) {
       const result = await parseRSS(xmlText, topic, n);
       console.log('RSS PARSE DONE: ', result);
 
-      // BAD ATTEMPTS ----
-      //const r1 = await fetch(url)
-      //  .then(r1 => console.log("X1: ", r1.text())); NOPE
-      //const response = await fetch(url);
-      //const xmlText = await response.text();
-      //const result = await parseRSS(xmlText);
-
       return result;
     } catch (error) {
       console.error("Failed to fetch or parse RSS: URL: ", url, "ERROR: ", error);
@@ -314,12 +307,73 @@ function getDomainFromUrl(urlString) {
     }
 }
 
-// OPML
-// REDDIT format: http://www.reddit.com/r/nudisco/new/.rss
-// Your OPML data as a string here
-let opmlData = '<opml version="1.0"><head><title>A subscriptions in feedly Cloud</title></head><body><outline text="Must Read" title="Must Read"/><outline text="art" title="art"><outline type="rss" text="Featured Projects" title="Featured Projects" xmlUrl="http://feeds.feedburner.com/behance/vorr" htmlUrl="http://www.behance.net"/><outline type="rss" text="NOTCOT.ORG" title="NOTCOT.ORG" xmlUrl="http://www.notcot.org/atom.php" htmlUrl="http://www.notcot.org/"/><outline type="rss" text="Colossal" title="Colossal" xmlUrl="https://www.thisiscolossal.com/feed/" htmlUrl="https://www.thisiscolossal.com/"/><outline type="rss" text="Massachusetts Cultural Council" title="Massachusetts Cultural Council" xmlUrl="http://feeds.feedburner.com/Artsake" htmlUrl="https://artsake.massculturalcouncil.org/"/><outline type="rss" text="Explore Flickr" title="Explore Flickr" xmlUrl="http://feeds.feedburner.com/explore_flickr_rss" htmlUrl="http://lunean.com/explore_flickr_rss/rss_tmp.xml"/><outline type="rss" text="Yanko Design" title="Yanko Design" xmlUrl="http://www.yankodesign.com/feed/" htmlUrl="https://www.yankodesign.com"/><outline type="rss" text="COOL HUNTING®" title="COOL HUNTING®" xmlUrl="http://www.coolhunting.com/atom.xml" htmlUrl="https://coolhunting.com"/><outline type="rss" text="Design You Trust" title="Design You Trust" xmlUrl="http://designyoutrust.com/feed/" htmlUrl="https://designyoutrust.com"/><outline type="rss" text="FECAL FACE DOT COM" title="FECAL FACE DOT COM" xmlUrl="http://feeds.feedburner.com/FecalFaceDotCom" htmlUrl="http://www.fecalface.com/SF/"/><outline type="rss" text="CreativeApplications.Net" title="CreativeApplications.Net" xmlUrl="http://feeds.feedburner.com/creativeapplicationsnet" htmlUrl="https://www.creativeapplications.net"/><outline type="rss" text="Its Nice That" title="Its Nice That" xmlUrl="http://feeds2.feedburner.com/itsnicethat/SlXC" htmlUrl="http://www.itsnicethat.com/"/><outline type="rss" text="FlowingData" title="FlowingData" xmlUrl="http://feeds.feedburner.com/FlowingData" htmlUrl="https://flowingdata.com"/><outline type="rss" text="Information Is Beautiful" title="Information Is Beautiful" xmlUrl="http://feeds.feedburner.com/InformationIsBeautiful" htmlUrl="https://informationisbeautiful.net"/><outline type="rss" text="News: Datablog | guardian.co.uk" title="News: Datablog | guardian.co.uk" xmlUrl="http://www.guardian.co.uk/news/datablog/rss" htmlUrl="https://www.theguardian.com/news/datablog"/><outline type="rss" text="Buamai" title="Buamai" xmlUrl="http://www.buamai.com/feed" htmlUrl="https://buamai.com/"/><outline type="rss" text="Core77" title="Core77" xmlUrl="http://feeds.feedburner.com/core77/blog" htmlUrl="http://core77.com/home/rss"/><outline type="rss" text="Designboom" title="Designboom" xmlUrl="http://www.designboom.com/weblog/rss.php" htmlUrl="https://www.designboom.com/"/><outline type="rss" text="Dezeen" title="Dezeen" xmlUrl="http://feeds.feedburner.com/dezeen" htmlUrl="https://www.dezeen.com"/><outline type="rss" text="Fstoppers" title="Fstoppers" xmlUrl="http://feeds.feedburner.com/fstoppersfeed" htmlUrl="https://fstoppers.com/"/><outline type="rss" text="Archinect.com Feed" title="Archinect.com Feed" xmlUrl="http://feeds2.feedburner.com/archinect" htmlUrl="https://archinect.com/"/><outline type="rss" text="Wooster Collective" title="Wooster Collective" xmlUrl="http://woostercollective.com/rss/index.xml" htmlUrl="http://www.woostercollective.com/"/></outline><outline text="etc.sec" title="etc.sec"><outline type="rss" text="Boing Boing" title="Boing Boing" xmlUrl="http://boingboing.net/index.rdf" htmlUrl="https://boingboing.net/"/><outline type="rss" text="The New Yorker" title="The New Yorker" xmlUrl="http://www.newyorker.com/services/rss/feeds/everything.xml" htmlUrl="https://www.newyorker.com/culture"/><outline type="rss" text="Slate - Culture" title="Slate - Culture" xmlUrl="http://www.slate.com/rss" htmlUrl="https://slate.com/culture"/><outline type="rss" text="Editors Picks Articles on Seeking Alpha" title="Editors Picks Articles on Seeking Alpha" xmlUrl="http://seekingalpha.com/tag/editors-picks.xml" htmlUrl="https://seekingalpha.com"/><outline type="rss" text="Longreads" title="Longreads" xmlUrl="http://longreads.com/rss" htmlUrl="https://longreads.com/"/><outline type="rss" text="Harvard University Gazette" title="Harvard University Gazette" xmlUrl="http://www.trumba.com/calendars/gazette.rss" htmlUrl="https://news.harvard.edu/gazette/harvard-events/events-calendar/"/><outline type="rss" text="Fark.com RSS" title="Fark.com RSS" xmlUrl="http://www.fark.com/fark.rss" htmlUrl="https://www.fark.com/"/><outline type="rss" text="The Onion" title="The Onion" xmlUrl="http://www.theonion.com/content/feeds/daily" htmlUrl="https://www.theonion.com"/></outline><outline text="etc" title="etc"><outline type="rss" text="The New Yorker" title="The New Yorker" xmlUrl="http://www.newyorker.com/services/rss/feeds/everything.xml" htmlUrl="https://www.newyorker.com/culture"/><outline type="rss" text="The Atlantic — News and analysis on politics, business, culture ..." title="The Atlantic — News and analysis on politics, business, culture ..." xmlUrl="http://feeds.feedburner.com/TheAtlantic" htmlUrl="https://www.theatlantic.com/"/><outline type="rss" text="AllSides Balanced News Feed" title="AllSides Balanced News Feed" xmlUrl="https://www.allsides.com/news/rss" htmlUrl="https://www.allsides.com/rss/news"/><outline type="rss" text="Aeon | a world of ideas" title="Aeon | a world of ideas" xmlUrl="https://aeon.co/feed.rss" htmlUrl="https://aeon.co"/><outline type="rss" text="Nautilus" title="Nautilus" xmlUrl="https://nautil.us/feed/" htmlUrl="https://nautil.us/"/><outline type="rss" text="Gizmodo" title="Gizmodo" xmlUrl="http://feeds.gawker.com/io9/vip" htmlUrl="https://gizmodo.com"/><outline type="rss" text="Internet Meme Database | Know Your Meme" title="Internet Meme Database | Know Your Meme" xmlUrl="http://knowyourmeme.com/newsfeed.rss" htmlUrl="https://knowyourmeme.com"/><outline type="rss" text="The New Republic" title="The New Republic" xmlUrl="http://www.newrepublic.com/rss.xml" htmlUrl="https://newrepublic.com"/><outline type="rss" text="Reason Magazine" title="Reason Magazine" xmlUrl="http://feeds.feedburner.com/reason/AllArticles" htmlUrl="https://reason.com/latest/"/><outline type="rss" text="ProPublica" title="ProPublica" xmlUrl="http://feeds.propublica.org/propublica/main" htmlUrl="https://www.propublica.org/"/><outline type="rss" text="MetaFilter" title="MetaFilter" xmlUrl="http://xml.metafilter.com/rss.xml" htmlUrl="https://www.metafilter.com/"/><outline type="rss" text="kottke.org" title="kottke.org" xmlUrl="http://feeds.kottke.org/main" htmlUrl="https://kottke.org/"/><outline type="rss" text="VICE RSS Feed" title="VICE RSS Feed" xmlUrl="http://www.vice.com/rss" htmlUrl="https://www.vice.com/en%3Flocale%3Den_us"/><outline type="rss" text="Laughing Squid" title="Laughing Squid" xmlUrl="http://feeds.laughingsquid.com/laughingsquid" htmlUrl="https://laughingsquid.com/"/></outline><outline text="music" title="music"><outline type="rss" text="The Allmusic Blog" title="The Allmusic Blog" xmlUrl="http://blog.allmusic.com/feed/" htmlUrl="https://www.allmusic.com/blog/"/><outline type="rss" text="EDM.com - The Latest Electronic Dance Music News, Reviews &amp; Artists" title="EDM.com - The Latest Electronic Dance Music News, Reviews &amp; Artists" xmlUrl="https://edm.com/.rss/full/" htmlUrl="https://edm.com"/><outline type="rss" text="FACT magazine: music and art" title="FACT magazine: music and art" xmlUrl="http://www.factmag.com/feed/" htmlUrl="https://www.factmag.com/"/><outline type="rss" text="Mixmag  - The worlds biggest dance music and clubbing magazine" title="Mixmag  - The worlds biggest dance music and clubbing magazine" xmlUrl="http://www.mixmag.net/rss.xml" htmlUrl="https://mixmag.net/"/><outline type="rss" text="Dancing Astronaut" title="Dancing Astronaut" xmlUrl="http://www.dancingastronaut.com/feed/" htmlUrl="https://dancingastronaut.com/"/><outline type="rss" text="newest submissions : NuDisco" title="newest submissions : NuDisco" xmlUrl="https://www.reddit.com/r/nudisco/new/.rss" htmlUrl="https://www.reddit.com/r/nudisco/new/"/><outline type="rss" text="Spin Magazine Online -" title="Spin Magazine Online -" xmlUrl="http://www.spin.com/rss.xml" htmlUrl="https://www.spin.com/"/></outline><outline text="science" title="science"><outline type="rss" text="ScienceNOW" title="ScienceNOW" xmlUrl="http://sciencenow.sciencemag.org/rss/current.xml" htmlUrl="https://www.science.org/news"/><outline type="rss" text="Science News - The New York Times" title="Science News - The New York Times" xmlUrl="http://www.nytimes.com/services/xml/rss/nyt/Science.xml" htmlUrl="https://www.nytimes.com/section/science"/><outline type="rss" text="Livescience.com" title="Livescience.com" xmlUrl="http://feeds.feedburner.com/Livesciencecom" htmlUrl="https://www.livescience.com"/><outline type="rss" text="KDnuggets" title="KDnuggets" xmlUrl="http://feeds.feedburner.com/kdnuggets-data-mining-analytics" htmlUrl="https://www.kdnuggets.com"/><outline type="rss" text="Scientific Blogging: Michael Shermer Scientific Blogging article" title="Scientific Blogging: Michael Shermer Scientific Blogging article" xmlUrl="http://www.scientificblogging.com/rss.xml" htmlUrl="https://www.science20.com"/><outline type="rss" text="National Institutes of Health (NIH) News Releases" title="National Institutes of Health (NIH) News Releases" xmlUrl="http://www.nih.gov/news/feed.xml" htmlUrl="https://www.nih.gov/"/><outline type="rss" text="Machine Learning Mastery" title="Machine Learning Mastery" xmlUrl="http://machinelearningmastery.com/feed/" htmlUrl="https://machinelearningmastery.com/"/></outline><outline text="politics" title="politics"><outline type="rss" text="Daily Kos" title="Daily Kos" xmlUrl="https://www.dailykos.com/blogs/main.rss" htmlUrl="https://www.dailykos.com/blogs/main?pm_campaign=blog&amp;pm_medium=rss&amp;pm_source=main"/><outline type="rss" text="Raw Story - Celebrating 20 Years of Independent Journalism" title="Raw Story - Celebrating 20 Years of Independent Journalism" xmlUrl="http://feeds.feedburner.com/rawstory/gKpz" htmlUrl="https://www.rawstory.com/"/><outline type="rss" text="Politics" title="Politics" xmlUrl="https://rss.politico.com/politics-news.xml" htmlUrl="https://rss.politico.com/politics-news.xml"/><outline type="rss" text="RealClearPolitics - Homepage" title="RealClearPolitics - Homepage" xmlUrl="http://www.realclearpolitics.com/index.xml" htmlUrl="http://www.realclearpolitics.com/"/><outline type="rss" text="RedState" title="RedState" xmlUrl="http://www.redstate.com/feed/" htmlUrl="https://redstate.com/feed/"/><outline type="rss" text="National Review" title="National Review" xmlUrl="https://www.nationalreview.com/feed/" htmlUrl="https://www.nationalreview.com"/></outline><outline text="tech" title="tech"><outline type="rss" text="MarkTechPost" title="MarkTechPost" xmlUrl="https://www.marktechpost.com/feed/" htmlUrl="https://www.marktechpost.com/"/><outline type="rss" text="TorrentFreak" title="TorrentFreak" xmlUrl="http://feeds.feedburner.com/Torrentfreak" htmlUrl="https://torrentfreak.com/"/><outline type="rss" text="Bioconductor Forum latest!" title="Bioconductor Forum latest!" xmlUrl="https://support.bioconductor.org/feeds/latest/" htmlUrl="https://support.bioconductor.org/"/><outline type="rss" text="Hacker News" title="Hacker News" xmlUrl="https://news.ycombinator.com/rss" htmlUrl="https://news.ycombinator.com/"/><outline type="rss" text="programming - Reddit" title="programming - Reddit" xmlUrl="https://www.reddit.com/r/programming/new/.rss" htmlUrl="https://www.reddit.com/r/programming/"/><outline type="rss" text="Omics! Omics!" title="Omics! Omics!" xmlUrl="http://omicsomics.blogspot.com/feeds/posts/default" htmlUrl="http://omicsomics.blogspot.com/"/><outline type="rss" text="R-bloggers" title="R-bloggers" xmlUrl="http://feeds.feedburner.com/RBloggers" htmlUrl="https://www.r-bloggers.com"/><outline type="rss" text="Papers with Code: Trending (unofficial)" title="Papers with Code: Trending (unofficial)" xmlUrl="https://us-east1-ml-feeds.cloudfunctions.net/pwc/trending" htmlUrl="https://github.com/ml-feeds/pwc-feeds"/><outline type="rss" text="Towards Data Science" title="Towards Data Science" xmlUrl="https://medium.com/feed/towards-data-science" htmlUrl="https://towardsdatascience.com?source=rss----7f60cf5620c9---4"/><outline type="rss" text="Awesome bioRxiv" title="Awesome bioRxiv" xmlUrl="http://feeds.feedburner.com/bx6" htmlUrl="http://github.com/dylang/node-rss"/><outline type="rss" text="Biostar Forum latest!" title="Biostar Forum latest!" xmlUrl="http://www.biostars.org/feeds/latest/" htmlUrl="https://www.biostars.org/"/><outline type="rss" text="Slashdot" title="Slashdot" xmlUrl="https://rss.slashdot.org/Slashdot/slashdotMainatom" htmlUrl="https://slashdot.org/"/><outline type="rss" text="Altmetric Ranked Biomedical Research Articles" title="Altmetric Ranked Biomedical Research Articles" xmlUrl="https://altrss.lunean.com/rss2.xml" htmlUrl="http://lunean.com"/><outline type="rss" text="Machine Learning" title="Machine Learning" xmlUrl="https://www.reddit.com/r/MachineLearning/new/.rss" htmlUrl="https://www.reddit.com/r/MachineLearning/"/><outline type="rss" text="r/LocalLLaMA" title="r/LocalLLaMA" xmlUrl="https://www.reddit.com/r/LocalLLaMA/new/.rss" htmlUrl="https://www.reddit.com/r/LocalLLaMA/new"/></outline><outline text="news" title="news"><outline type="rss" text="BBC News Top Stories" title="BBC News Top Stories" xmlUrl="https://rsshub.app/bbc/" htmlUrl="https://www.bbc.co.uk/news"/><outline type="rss" text="CNN.com - RSS Channel" title="CNN.com - RSS Channel" xmlUrl="http://rss.cnn.com/rss/cnn_latest.rss" htmlUrl="http://www.cnn.com"/><outline type="rss" text="NYT &gt; Top Stories" title="NYT &gt; Top Stories" xmlUrl="https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml" htmlUrl="https://www.nytimes.com"/><outline type="rss" text="Latest &amp; Breaking News on Fox News" title="Latest &amp; Breaking News on Fox News" xmlUrl="https://moxie.foxnews.com/google-publisher/latest.xml" htmlUrl="https://www.foxnews.com/"/><outline type="rss" text="PBS NewsHour - Nation" title="PBS NewsHour - Nation" xmlUrl="https://www.pbs.org/newshour/feeds/rss/nation" htmlUrl="https://www.pbs.org/newshour/nation"/><outline type="rss" text="Axios" title="Axios" xmlUrl="https://api.axios.com/feed/top/" htmlUrl="https://www.axios.com/"/><outline type="rss" text="NPR Topics: News" title="NPR Topics: News" xmlUrl="https://feeds.npr.org/1001/rss.xml" htmlUrl="https://www.npr.org/templates/story/story.php?storyId=1001"/><outline type="rss" text="Offstream News" title="Offstream News" xmlUrl="https://offstream.news/index_rss.xml" htmlUrl="https://offstream.news"/><outline type="rss" text="Home - CBSNews.com" title="Home - CBSNews.com" xmlUrl="https://www.cbsnews.com/latest/rss/main" htmlUrl="https://www.cbsnews.com/"/><outline type="rss" text="ABC News: Top Stories" title="ABC News: Top Stories" xmlUrl="http://feeds.abcnews.com/abcnews/topstories" htmlUrl="http://abcnews.go.com/"/></outline><outline text="tech.sec" title="tech.sec"><outline type="rss" text="VentureBeat" title="VentureBeat" xmlUrl="http://venturebeat.com/feed/" htmlUrl="https://venturebeat.com/"/><outline type="rss" text="The Verge - All Posts" title="The Verge - All Posts" xmlUrl="https://www.theverge.com/rss/index.xml" htmlUrl="https://www.theverge.com/"/><outline type="rss" text="TechCrunch" title="TechCrunch" xmlUrl="https://techcrunch.com/feed/" htmlUrl="https://techcrunch.com/"/><outline type="rss" text="newest submissions : NintendoSwitch" title="newest submissions : NintendoSwitch" xmlUrl="https://www.reddit.com/r/nintendoswitch/new/.rss" htmlUrl="https://www.reddit.com/r/nintendoswitch/new/"/></outline></body></opml>';
+// Main function loop
+function main() {
+    let contentContainer = document.getElementById('rss');
 
-// Priority order for topics
+    // REDDIT format: http://www.reddit.com/r/nudisco/new/.rss
+    fetch('feeds.opml')
+        .then(response => response.text())
+        .then(opmlData => { 
+            const data = parseOPML(opmlData, ignoreTopics, ignoreTitles);
+            contentContainer.textContent = 'Parsing OPML ...';
+            console.log('MAIN: DATA: ', data);
+            return data; 
+        })
+        .then(data => {
+            const subset = getRandomItemsFromEachTopic(data, n_sources);
+            console.log('MAIN: SUBSET: ', subset);
+            return subset;
+        })
+        .then(subset => {
+            const data = processTopics(subset);
+            contentContainer.textContent = 'Parsing topics ...';
+            console.log('MAIN: TOPICS: ', subset);
+            return data;
+        })
+        .then(data => {
+            items = flattenTopics(data);
+            console.log('MAIN: FLATTENED TOPICS: ', items);
+    
+            // Custom sort function to order by the topic priorities defined
+            items.sort((a, b) => topicPriority[b.topic] - topicPriority[a.topic]);
+    
+            console.log('MAIN: SORTED TOPICS: ', items);
+            
+            // Clear the content container before adding news items
+            contentContainer.textContent = '';
+    
+            if(items.length === 0) {
+                contentContainer.textContent = 'No items found';
+            } else {
+                items.forEach(entry => {
+                    // Create and add the header
+                    const header = document.createElement('h4');
+                    header.textContent = entry.title + ' (' + entry.topic + ')';
+                    contentContainer.appendChild(header);
+    
+                    // Create and add the list
+                    const list = document.createElement('ul');
+                    entry.items.forEach(item => {
+                        const listItem = document.createElement('li');
+                        const link = document.createElement('a');
+    
+                        link.href = item.link;
+                        link.target = '_blank';
+                        link.textContent = item.title;
+    
+                        listItem.appendChild(link);
+                        list.appendChild(listItem);
+                    });
+    
+                    contentContainer.appendChild(list);
+                });
+            }
+        });
+}
+
+// Priority of topics; higher number, higher priority; 
+// also the number of articles to select
 const topicPriority = {
     "news": 5,
     "tech": 3,
@@ -333,11 +387,12 @@ const topicPriority = {
     "etc.sec": 1
 };
 
-// List of RSS feeds to ignore
+// List of RSS topics to ignore
 const ignoreTopics = [
     'Must Read'
 ];
 
+// List of RSS feeds to ignore
 const ignoreTitles = [
     'Harvard University Gazette',
     'Altmetric Ranked Biomedical Research Articles',
@@ -354,7 +409,7 @@ const ignoreTitles = [
 // Number of sources to select from each topic
 let n_sources = 2;
 
-// Get the value of 'sources' if used
+// Get the value of 'sources' if specified in the URL
 const params = new URL(window.location.href).searchParams;
 if (params.get('sources') !== null && params.get('sources') !== '') {
     let value = params.get('sources');
@@ -368,54 +423,5 @@ if (params.get('sources') !== null && params.get('sources') !== '') {
 // Proxy URL
 const proxyUrl = 'https://w3kjl7phz5lslxrhzapi7wasx40msjqd.lambda-url.us-east-1.on.aws/?url=';
 
-let contentContainer = document.getElementById('rss');
-contentContainer.textContent = 'Parsing OPML ...';
-
-const data = parseOPML(opmlData, ignoreTopics, ignoreTitles);
-console.log('DATA: ', data);
-
-// Using the function and logging the result
-const subset = getRandomItemsFromEachTopic(data, n_sources);
-console.log('SUBSET: ', subset);
-
-// Run the function to process all topics and log the output
-processTopics(subset)
-    .then(data => {
-        items = flattenTopics(data);
-        console.log('FLATTENED TOPICS: ', items);
-
-        // Custom sort function to order by the topic priorities defined
-        items.sort((a, b) => topicPriority[b.topic] - topicPriority[a.topic]);
-
-        console.log('SORTED TOPICS: ', items);
-
-        let contentContainer = document.getElementById('rss');
-        contentContainer.textContent = '';
-
-        if(items.length === 0) {
-            contentContainer.textContent = 'No items found';
-        } else {
-            items.forEach(entry => {
-                // Create and add the header
-                const header = document.createElement('h4');
-                header.textContent = entry.title + ' (' + entry.topic + ')';
-                contentContainer.appendChild(header);
-
-                // Create and add the list
-                const list = document.createElement('ul');
-                entry.items.forEach(item => {
-                    const listItem = document.createElement('li');
-                    const link = document.createElement('a');
-
-                    link.href = item.link;
-                    link.target = '_blank';
-                    link.textContent = item.title;
-
-                    listItem.appendChild(link);
-                    list.appendChild(listItem);
-                });
-
-                contentContainer.appendChild(list);
-            });
-        }
-});
+// Run main function
+main();
