@@ -359,8 +359,14 @@ function main() {
                     entry.items.forEach(item => {
                         const listItem = document.createElement('li');
                         const link = document.createElement('a');
+                        let itemLink = item.link;
     
-                        link.href = item.link;
+                        // Remove URL parameters on links 
+                        if (urlString.includes('nih.gov')) {
+                            itemLink = itemLink.split('?')[0] 
+                        }
+
+                        link.href = itemLink;
                         link.target = '_blank';
                         link.textContent = item.title;
     
