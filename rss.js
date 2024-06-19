@@ -258,9 +258,9 @@ async function processTopics(topics) {
             const feedDataArray = [];
             for (const item of topic.items) {
                 let url = item.xmlUrl;
-                
+
                 // Encode to handle params in the URL
-                url = encodeURIComponent(x); 
+                url = encodeURIComponent(url); 
                 url = proxyUrl + url;
 
                 const feedData = await fetchAndParseRSS(url, topic.topic);
