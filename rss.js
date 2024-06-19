@@ -132,6 +132,10 @@ async function fetchAndParseRSS(url, topic) {
       let xmlText = await response.text();
       console.log('RSS XML DOWNLOAD DONE: ', xmlText);
 
+      if(xmlText === 'Internal Server Error') {
+        return null; 
+      }
+
       const result = await parseRSS(xmlText, topic, n);
       console.log('RSS PARSE DONE: ', result);
 
