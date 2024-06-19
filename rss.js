@@ -155,6 +155,8 @@ async function fetchAndParseRSS(url, topic) {
   }
 
 function parseRSS(xmlText, topic, n) {
+    let contentContainer = document.getElementById('rss');
+    
     // Parse the XML text
     const parser = new DOMParser();
     const xmlDoc = parser.parseFromString(xmlText, "application/xml");
@@ -186,6 +188,7 @@ function parseRSS(xmlText, topic, n) {
     console.log('RSS CHANNEL EXTRACTION DONE');
 
     console.log('CHANNEL TITLE: ', channel_title);
+    contentContainer.textContent = 'Fetching: ' + channel_title + ' ...';
 
     const result = {
         title: truncateString(channel_title, 45),
@@ -383,13 +386,20 @@ const n_sources = 2;
 // Proxy URL
 const proxyUrl = 'https://w3kjl7phz5lslxrhzapi7wasx40msjqd.lambda-url.us-east-1.on.aws/?url=';
 
+let contentContainer = document.getElementById('rss');
+contentContainer.textContent = 'Loading ...';
+
 const data = parseOPML(opmlData, ignoreTopics, ignoreTitles);
 console.log('DATA: ', data);
+
+contentContainer.textContent = 'Parsing OPML ...';
 
 // Using the function and logging the result
 //const subset = getRandomItemFromEachTopic(data);
 const subset = getRandomItemsFromEachTopic(data, n_sources);
 console.log('SUBSET: ', subset);
+
+contentContainer.textContent = 'Retrieving Topics ...';
 
 // Run the function to process all topics and log the output
 processTopics(subset).then(data => {
