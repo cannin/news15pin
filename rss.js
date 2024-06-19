@@ -360,6 +360,7 @@ function main() {
                         const listItem = document.createElement('li');
                         const link = document.createElement('a');
 
+                        // Remove parameters on links associated with tracking
                         let itemLink = item.link;
                         itemLink = itemLink.split('?')[0]
 
