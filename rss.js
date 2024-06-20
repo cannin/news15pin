@@ -226,13 +226,14 @@ function parseRSS(xmlText, topic, n) {
         }
 
         if(window.innerWidth < 768) {
-            title = truncateString(title, 90);
-        } else {
             title = truncateString(title, 45);
+            description = truncateString(description, 45);
+        } else {
+            title = truncateString(title, 90);
+            description = truncateString(description, 90);
         }
 
         title = title + ' (' + domain + ', ' + date + ')';
-        description = truncateString(description, 90);
 
         result.items.push({
             title: title,
