@@ -226,7 +226,7 @@ function parseRSS(xmlText, topic, n) {
         }
 
         if(window.innerWidth < smallScreenSize) {
-            title = truncateString(title, 90);
+            title = truncateString(title, 80);
         } else {
             title = truncateString(title, 90);
             title = title + ' (' + domain + ', ' + date + ')';
