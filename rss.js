@@ -428,10 +428,11 @@ const ignoreTitles = [
     'Spin Magazine Online -',
     'The Allmusic Blog',
     'Massachusetts Cultural Council',
-    'Biostar Forum latest!'
+    'Biostar Forum latest!',
+    'Awesome bioRxiv'
 ];
 
-smallScreenSize = 768;
+smallScreenSize = 800;
 
 // Number of sources to select from each topic
 let n_sources = 2;
