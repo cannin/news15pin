@@ -225,15 +225,14 @@ function parseRSS(xmlText, topic, n) {
             domain = getDomainFromUrl(link);
         }
 
-        if(window.innerWidth < 768) {
+        if(window.innerWidth < smallScreenSize) {
             title = truncateString(title, 45);
             description = truncateString(description, 45);
         } else {
             title = truncateString(title, 90);
             description = truncateString(description, 90);
+            title = title + ' (' + domain + ', ' + date + ')';
         }
-
-        title = title + ' (' + domain + ', ' + date + ')';
 
         result.items.push({
             title: title,
@@ -360,7 +359,12 @@ function main() {
                 items.forEach(entry => {
                     // Create and add the header
                     const header = document.createElement('h1');
-                    header.textContent = entry.title + ' (' + entry.topic + ')';
+
+                    if(window.innerWidth < smallScreenSize) {
+                        header.textContent = entry.title;
+                    } else {
+                        header.textContent = entry.title + ' (' + entry.topic + ')';
+                    }
                     contentContainer.appendChild(header);
     
                     // Create and add the list
@@ -426,6 +430,8 @@ const ignoreTitles = [
     'Massachusetts Cultural Council',
     'Biostar Forum latest!'
 ];
+
+smallScreenSize = 768;
 
 // Number of sources to select from each topic
 let n_sources = 2;
