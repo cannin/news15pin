@@ -225,7 +225,12 @@ function parseRSS(xmlText, topic, n) {
             domain = getDomainFromUrl(link);
         }
 
-        title = truncateString(title, 90);
+        if(window.innerWidth < 768) {
+            title = truncateString(title, 90);
+        } else {
+            title = truncateString(title, 45);
+        }
+
         title = title + ' (' + domain + ', ' + date + ')';
         description = truncateString(description, 90);
 
@@ -417,7 +422,8 @@ const ignoreTitles = [
     'Fstoppers',
     'Spin Magazine Online -',
     'The Allmusic Blog',
-    'Massachusetts Cultural Council'
+    'Massachusetts Cultural Council',
+    'Biostar Forum latest!'
 ];
 
 // Number of sources to select from each topic
