@@ -429,7 +429,10 @@ const ignoreTitles = [
     'The Allmusic Blog',
     'Massachusetts Cultural Council',
     'Biostar Forum latest!',
-    'Awesome bioRxiv'
+    'Awesome bioRxiv',
+    'r/LocalLLaMA',
+    'r/NintendoSwitch',
+    'r/MachineLearning'
 ];
 
 smallScreenSize = 800;
